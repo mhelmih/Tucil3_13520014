@@ -1,7 +1,7 @@
 N = 4
 """ Board Size (NxN). """
 
-# Order: right, bottom, lelft, top
+# Order: right, bottom, left, top
 VER_DIR = [ 0, 1, 0, -1 ]
 """ Vertical Direction to move the empty block on the board. 
 +1 : Bottom
@@ -9,7 +9,7 @@ VER_DIR = [ 0, 1, 0, -1 ]
 -1 : Top
 """
 
-# Order: right, bottom, lelft, top
+# Order: right, bottom, left, top
 HOR_DIR = [ 1, 0, -1, 0 ]
 """ Horizontal Direction to move the empty block on the board. 
 +1 : Right
