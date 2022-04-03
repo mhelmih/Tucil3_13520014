@@ -1,5 +1,5 @@
-from os.path import exists
 from Solver import Solver
+from createBoard import from_file, from_random
 
 print(" _ ___     ___            _       ___      _             ")
 print("/ | __|___| _ \\_  _ _____| |___  / __| ___| |_ _____ _ _ ")
@@ -24,20 +24,13 @@ while active:
     
     if user_pick == "1" or user_pick == "2":
         if user_pick == "1":
-            continue
+            board = from_random()
         elif user_pick == "2":
-            directory = "./test/"
-            filename = input("Filename: ")
-            if exists(directory + filename):
-                with open(directory + filename, 'r') as f:
-                    board = [[int(num) for num in line.split(' ')] for line in f if line.strip() != "" ]
-            else:
-                print(f"'{directory + filename}' is not exist.")
-                continue
-        print()
+            board = from_file()
         
-        puzzle = Solver(board)
-        puzzle.solve()
+        if board != []:
+            puzzle = Solver(board)
+            puzzle.solve()
         
     elif user_pick == "0":
         active = False
